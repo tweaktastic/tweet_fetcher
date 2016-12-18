@@ -1,0 +1,15 @@
+<div class="container" ng-show="result.hashtag">
+  <div class="jumbotron">
+    <div class= "listWrapper">
+      <h2 ng-show="result.hashtag">{{result.hashtag}}</h2>
+      <ul>
+        <li class="tweet-li" ng-repeat="tweet in result.fetchedTweets">
+          <a class="tweet-text" href="#">{{tweet.text}}</a>
+        </li>
+      </ul>
+      <div class="btn btn-primary" ng-show="showBtn" ng-click="fetchMore(hashtag);">
+        Show more
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="tweetFetcher" ng-app lang="en">
+<head>
+    <meta charset="utf-8">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
+    <style type="text/css">
+    ul>li, a{cursor: pointer;}
+    </style>
+    <title>Tweet Fetcher</title>
+</head>
+<body>
+<div class="navbar navbar-default" id="navbar">
+    <div class="container" id="navbar-container">
+      <div class="navbar-header">
+          <a href="#" class="navbar-brand">
+              <small>
+                  <i class="glyphicon glyphicon-log-out"></i>
+                  Tweet Fetcher
+              </small>
+          </a>
+
+      </div>
+    </div>
+</div>
+<div class="container">
+<br/>
+<div class="container">
+  <div class="jumbotron">
+    <div class="input-group">
+      <label class="margin-10">Search Tweets</label><input class="margin-10" ng-disabled="true" type="text" ng-model="hashtag" name="hashtag">
+      <div class="btn btn-primary margin-10" ng-click='getTweets(hashtag);'>
+        Get Tweets
+      </div>
+    </div>
+  </div>
+</div>
+<br/>
+    <div ng-view="" id="ng-view"></div>
+    <div id="loaderWrapper" ng-show="showLoader">
+      <div id="circularG">
+      	<div id="circularG_1" class="circularG"></div>
+      	<div id="circularG_2" class="circularG"></div>
+      	<div id="circularG_3" class="circularG"></div>
+      	<div id="circularG_4" class="circularG"></div>
+      	<div id="circularG_5" class="circularG"></div>
+      	<div id="circularG_6" class="circularG"></div>
+      	<div id="circularG_7" class="circularG"></div>
+      	<div id="circularG_8" class="circularG"></div>
+      </div>
+    </div>
+
+</div>
+
+
+
+
+<div>
+
+</div>
+<script src="js/angular.min.js"></script>
+<script src="js/angular-route.min.js"></script>
+<script src="app/app.js"></script>
+</body>
+</html>
