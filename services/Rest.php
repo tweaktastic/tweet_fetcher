@@ -53,7 +53,10 @@
 		}
 
 		/*
-
+			cleanInputs:-
+				params: $data
+				returns: $clean_data
+				need to add xss_clean for post requests
 		*/
 		private function cleanInputs($data){
 			$clean_input = array();

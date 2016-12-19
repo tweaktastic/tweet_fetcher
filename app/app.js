@@ -7,18 +7,18 @@ app.factory("services", ['$http', function($http) {
         return status.data
       });
     }
-
     return obj;
 }]);
 
 app.controller('listCtrl', function ($rootScope, $scope, services) {
+    //set default values on controller load
     $rootScope.hashtag = "custserv";
-    $scope.max_id = "";
     $rootScope.result = {
       fetchedTweets: [],
       hashtag: ""
     }
     $rootScope.showBtn = false;
+    $scope.max_id = "";
     $scope.resetVars = function(){
       $scope.max_id = "";
       $rootScope.result = {
@@ -32,7 +32,7 @@ app.controller('listCtrl', function ($rootScope, $scope, services) {
       services.getTweets(hashtag, $scope.max_id).then(function(data){
           if(!data.tweets || data.tweets.length == 0){
             $rootScope.showBtn = false;
-            alert('not matching tweets found');
+            alert('no more matching tweets were found');
           }else{
             $scope.max_id = data.max_id.toString();
             $rootScope.result.hashtag = hashtag;
